@@ -5,9 +5,15 @@ defmodule ProblemOne do
   Find the sum of all the multiples of 3 or 5 below 1000.
   """
   def fizz_buzz_multiples(r) do
-    Enum.filter(1..r-1, fn n -> rem(n, 3) == 0 or rem(n, 5) == 0 end)
-    |> Enum.reduce(0, fn x, acc -> acc + x end)
+    Enum.filter(1..r, fn n -> rem(n, 3) == 0 or rem(n, 5) == 0 end)
+    |> Enum.sum()
   end
+
+  # with Enum.reduce
+  #   def fizz_buzz_multiples(r) do
+  #   Enum.filter(1..r, fn n -> rem(n, 3) == 0 or rem(n, 5) == 0 end)
+  #   |> Enum.reduce(0, fn x, acc -> acc + x end)
+  # end
 end
 
 # IO.puts(ProblemOne.fizz_buzz_multiples(9))
