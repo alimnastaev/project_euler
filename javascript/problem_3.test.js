@@ -5,11 +5,13 @@
 function largest_prime_factor(n) {
   let array_of_numbers = []
   for (let f = 2; f < n * n; f++)
-    if (Number.isInteger(n / f) || n / f == 1) {
+    if (Number.isInteger(n / f) || (n / f == 1)) {
       array_of_numbers.push(f)
       n /= f
+      f -= 1
     }
   return Math.max(...array_of_numbers)
+  // return array_of_numbers # if you want to see complete prime factors pattern
 }
 
 
@@ -20,6 +22,10 @@ describe('prime factor testing', () => {
 
   test('success case to prime factor 600851475143', () => {
     expect(largest_prime_factor(600851475143)).toEqual(6857)
+  })
+
+  test('success case to prime factor 1000', () => {
+    expect(largest_prime_factor(1000)).toEqual(5)
   })
 
   test('fail case if no argument provided', () => {
