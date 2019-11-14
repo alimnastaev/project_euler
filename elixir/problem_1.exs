@@ -10,7 +10,7 @@ defmodule ProblemOne do
   """
 
   def fizz_buzz_multiples(r) do
-    Enum.reduce(1..9, 0, fn x, acc ->
+    Enum.reduce(1..r, 0, fn x, acc ->
       if rem(x, 3) == 0 or rem(x, 5) == 0 do
         x + acc
       else
