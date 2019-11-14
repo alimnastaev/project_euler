@@ -1,3 +1,7 @@
+//  The prime factors of 13195 are 5, 7, 13 and 29.
+// What is the largest prime factor of the number 600851475143 ?
+// https://projecteuler.net/problem=3
+
 function largest_prime_factor(n) {
   let array_of_numbers = []
   for (let f = 2; f < n * n; f++)
