@@ -20,7 +20,7 @@ defmodule Problem3 do
   def largest_prime_factor(n) when n > 0, do: implementation(n, 2)
 
   # base case for a recursive function
-  defp implementation(n, factor) when div(n, factor) == 1, do: n
+  defp implementation(n, factor) when factor * factor >= n, do: n
 
   defp implementation(n, factor) do
     case rem(n, factor) do
@@ -31,3 +31,9 @@ defmodule Problem3 do
     end
   end
 end
+
+{time, solution} = :timer.tc(fn -> Problem3.largest_prime_factor(600_851_475_143) end)
+
+IO.puts("1. Recursive function: #{solution}")
+
+IO.puts("#{time / 1000} ms")
