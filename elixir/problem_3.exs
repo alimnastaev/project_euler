@@ -21,7 +21,7 @@ defmodule Problem3 do
   def largest_prime_factor_1(n) when n > 0, do: implementation_1(n, 2)
 
   # base case for a recursive function
-  defp implementation_1(n, factor) when factor * factor >= n, do: n
+  defp implementation_1(n, factor) when factor * factor > n, do: n
 
   defp implementation_1(n, factor) do
     case rem(n, factor) do
@@ -41,7 +41,7 @@ defmodule Problem3 do
   def largest_prime_factor_2(n), do: implementation_2(n, 2)
 
   # base case for a recursive function
-  defp implementation_2(n, factor) when factor * factor >= n, do: n
+  defp implementation_2(n, factor) when factor * factor >  n, do: n
 
   defp implementation_2(n, factor) when rem(n, factor) == 0,
     do: implementation_2(div(n, factor), factor)
