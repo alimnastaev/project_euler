@@ -10,7 +10,7 @@ If you need to test `problem_3`
 1. Make sure you are in `elixir` folder (`cd elixir`)
 2. Run `elixir -r problem_3.exs test/problem_3_test.exs`
 3. You'll get back something like this:
-```
+```elixir
 ❯ elixir -r problem_3.exs test/problem_3_test.exs
 1. with case statement: 6857
 0.028 ms
@@ -32,7 +32,7 @@ If you need to test `problem_3.test.js`
 1. Make sure you are in `javascript` folder (`cd javascript`)
 2. Run `yarn test`
 3. You'll get back something like this:
-```
+```javascript
 ❯ yarn test
 yarn run v1.12.3
 $ jest
