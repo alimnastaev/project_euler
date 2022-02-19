@@ -10,12 +10,12 @@ defmodule Problem1 do
   """
   #####################
   def fizz_buzz_multiples(r) do
-    Enum.reduce(1..r, 0, fn x, acc ->
-      if rem(x, 3) == 0 or rem(x, 5) == 0 do
+    Enum.reduce(1..r, 0, fn
+      x, acc when rem(x, 3) == 0 or rem(x, 5) == 0 ->
         x + acc
-      else
+
+      _x, acc ->
         acc
-      end
     end)
   end
 
