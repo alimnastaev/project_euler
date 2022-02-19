@@ -27,7 +27,10 @@ defmodule Problem2 do
   def sum_even_fib_1(n) do
     Stream.unfold({1, 2}, fn {a, b} -> {a, {b, a + b}} end)
     |> Enum.take_while(fn x -> x < n end)
-    |> Enum.reduce(0, fn x, acc -> if rem(x, 2) == 0, do: x + acc, else: acc end)
+    |> Enum.reduce(0, fn
+      x, acc when rem(x, 2) == 0 -> x + acc
+      _x, acc -> acc
+    end)
   end
 
   @doc """
